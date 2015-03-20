@@ -1,0 +1,11 @@
+class xrdp {
+    package { 'xrdp':
+        ensure => installed,
+    }
+
+    service { 'xrdp':
+        ensure => running,
+        enable => true,
+        require => Package['xrdp'],
+    }
+}
